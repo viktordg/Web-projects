@@ -1,0 +1,21 @@
+html{
+    background: rgb(125, 161, 155);
+}
+
+.bongo{
+    color:rgb(196, 19, 245);
+    
+}
+
+#id-selector-demo{
+    color: antiquewhite;
+}
+
+li[value]{
+    color:brown
+}
+
+img{
+    height: 200px;
+    width: 200px;
+}
