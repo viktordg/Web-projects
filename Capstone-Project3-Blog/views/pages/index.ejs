@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<h2>Recent Posts</h2>
+<div class="posts-list">
+    <% if (posts.length > 0) { %>
+        <% posts.forEach(post => { %>
+            <div class="post">
+                <h3><%= post.title %></h3>
+                <p><%= post.content %></p>
+                <a href="/edit-post/<%= post.id %>">Edit</a>
+                <a href="/delete-post/<%= post.id %>" onclick="return confirm('Are you sure?');">Delete</a>
+            </div>
+        <% }) %>
+    <% } else { %>
+        <p>No posts to display.</p>
+    <% } %>
+</div>
+
+<%- include('../partials/footer') %>
