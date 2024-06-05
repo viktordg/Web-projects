@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 
 app.get('/api/news', async (req, res) => {
     try {
-        const response = await axios.get('https://newsapi.org/v2/top-headlines?country=bg&category=business&apiKey=d94e2fa4d1c74038936d73cb2a224476');
+        const response = await axios.get('https://newsapi.org/v2/top-headlines?country=bg&category=business');
         res.json(response.data);
     } catch (error) {
         res.status(500).json({ message: 'Error fetching news' });
