@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <link rel="stylesheet" href="/styles/home.css">
+</head>
+<body>
+    <!-- Header for buttons -->
+    <div class="header">
+        <form action="/add-note" method="GET">
+            <button type="submit" class="btn left">Add Note</button>
+        </form>
+        <form action="/logout" method="POST">
+            <button type="submit" class="btn right">Logout</button>
+        </form>
+    </div>
+
+    <!-- Notes container -->
+    <div class="notes-container">
+        <% if (notes.length > 0) { %>
+            <% notes.forEach(note => { %>
+                <div class="note">
+                    <div class="note-cover">
+                        <img src="<%= note.book_cover_url %>" alt="Book Cover">
+                    </div>
+                    <div class="note-details">
+                        <h2 class="note-title"><%= note.book_title %> - by <%= note.book_author %></h2>
+                        <p class="note-text"><%= note.note_text %></p>
+                    </div>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>No notes added yet. Use the "Add Note" button to create one.</p>
+        <% } %>
+    </div>
+</body>
+</html>
